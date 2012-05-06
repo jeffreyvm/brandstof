@@ -1,1 +1,0 @@
-Spring Hibernate Wicket example project
