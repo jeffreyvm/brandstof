@@ -1,5 +1,6 @@
 package be.jeffreyvanmulem.brandstof.model;
 
+import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObjectType;
 
 import javax.persistence.Column;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "GasStation")
-public class GasStation extends DomainObjectType {
+public class GasStation extends DomainObject {
     @Column(name = "Name")
     private String name;
 

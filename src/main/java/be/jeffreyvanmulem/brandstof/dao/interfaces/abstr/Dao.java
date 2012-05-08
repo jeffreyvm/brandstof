@@ -1,4 +1,4 @@
-package be.jeffreyvanmulem.brandstof.dao.interfaces;
+package be.jeffreyvanmulem.brandstof.dao.interfaces.abstr;
 
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
 

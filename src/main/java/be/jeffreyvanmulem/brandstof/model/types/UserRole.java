@@ -1,6 +1,7 @@
 package be.jeffreyvanmulem.brandstof.model.types;
 
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
+import be.jeffreyvanmulem.brandstof.model.abstr.DomainObjectType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +12,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "UserRole")
-public class UserRole extends DomainObject {
+public class UserRole extends DomainObjectType {
 
     @Column(name = "Role")
     private String role;

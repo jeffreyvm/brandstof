@@ -1,6 +1,6 @@
 package be.jeffreyvanmulem.brandstof.dao;
 
-import be.jeffreyvanmulem.brandstof.dao.interfaces.Dao;
+import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.Dao;
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
 import org.springframework.orm.jpa.support.JpaDaoSupport;
 import org.springframework.transaction.annotation.Transactional;

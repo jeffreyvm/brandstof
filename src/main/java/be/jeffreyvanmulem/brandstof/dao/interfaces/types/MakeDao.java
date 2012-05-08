@@ -1,16 +1,14 @@
-package be.jeffreyvanmulem.brandstof.dao.interfaces;
+package be.jeffreyvanmulem.brandstof.dao.interfaces.types;
 
 import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.Dao;
-import be.jeffreyvanmulem.brandstof.model.User;
+import be.jeffreyvanmulem.brandstof.model.Make;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Jeffrey
- * Date: 6/05/12
- * Time: 23:06
+ * Date: 8/05/12
+ * Time: 20:31
  * To change this template use File | Settings | File Templates.
  */
-public interface UserDao extends Dao<User> {
-
+public interface MakeDao extends Dao<Make>{
 }
-

@@ -1,6 +1,7 @@
 package be.jeffreyvanmulem.brandstof.model.types;
 
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
+import be.jeffreyvanmulem.brandstof.model.abstr.DomainObjectType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "Color")
-public class Color extends DomainObject {
+public class Color extends DomainObjectType {
     @Column(name = "HexCode")
     private String hexCode;
 
