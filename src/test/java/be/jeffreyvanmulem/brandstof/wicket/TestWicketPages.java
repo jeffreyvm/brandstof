@@ -32,9 +32,6 @@ public class TestWicketPages {
         acm.putBean("userDao", userDao);
 
         tester = new WicketTester(new WicketApplication(){
-            /* (non-Javadoc)
-                * @see be.jeffreyvanmulem.WicketApplication#getGuiceInjector()
-                */
             @Override
             protected SpringComponentInjector getSpringInjector() {
                 return  new SpringComponentInjector(this, acm, true);

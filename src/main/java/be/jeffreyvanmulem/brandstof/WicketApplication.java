@@ -30,9 +30,8 @@ public class WicketApplication extends WebApplication {
     protected void init() {
         super.init();
 
-        mountBookmarkablePage("user", UserPage.class);
-
-        addComponentInstantiationListener(getSpringInjector());
+        mountPage("user", UserPage.class);
+        getComponentInstantiationListeners().add(getSpringInjector());
 
     }
 

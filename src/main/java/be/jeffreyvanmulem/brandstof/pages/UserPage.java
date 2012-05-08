@@ -2,7 +2,6 @@ package be.jeffreyvanmulem.brandstof.pages;
 
 import be.jeffreyvanmulem.brandstof.dao.interfaces.UserDao;
 import be.jeffreyvanmulem.brandstof.model.User;
-import org.apache.wicket.PageParameters;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -14,6 +13,7 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.util.List;
@@ -29,7 +29,6 @@ public class UserPage extends WebPage {
 
     @SpringBean
     private UserDao userDao;
-
     public UserPage(final PageParameters pp)
     {
         Form<User> eventForm = new Form<User>("eventForm", new CompoundPropertyModel<User>(new User()));
@@ -51,7 +50,7 @@ public class UserPage extends WebPage {
         wmc.setOutputMarkupId(true);
         add(wmc);
 
-        eventForm.add(new AjaxSubmitLink("submit"){
+        eventForm.add(new AjaxSubmitLink("submit") {
             private static final long serialVersionUID = 1L;
 
             @Override
@@ -60,7 +59,12 @@ public class UserPage extends WebPage {
                 User newUser = new User();
                 newUser.setUsername(user.getUsername());
                 userDao.save(newUser);
-                target.addComponent(wmc);
+                target.add(wmc);
+            }
+
+            @Override
+            protected void onError(AjaxRequestTarget target, Form<?> form) {
+                //To change body of implemented methods use File | Settings | File Templates.
             }
         });
 

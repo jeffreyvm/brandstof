@@ -1,9 +1,9 @@
 package be.jeffreyvanmulem.brandstof;
 
 import be.jeffreyvanmulem.brandstof.pages.UserPage;
-import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.request.mapper.parameter.PageParameters;
 
 /**
  * Created by IntelliJ IDEA.
