@@ -1,6 +1,6 @@
 package be.jeffreyvanmulem.brandstof.dao.interfaces;
 
-import be.jeffreyvanmulem.brandstof.model.DomainObject;
+import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
 
 import java.io.Serializable;
 import java.util.List;

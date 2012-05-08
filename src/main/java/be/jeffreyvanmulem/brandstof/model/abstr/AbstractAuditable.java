@@ -1,4 +1,4 @@
-package be.jeffreyvanmulem.brandstof.model;
+package be.jeffreyvanmulem.brandstof.model.abstr;
 
 import org.joda.time.LocalDate;
 

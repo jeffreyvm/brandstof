@@ -1,4 +1,4 @@
-package be.jeffreyvanmulem.brandstof.model;
+package be.jeffreyvanmulem.brandstof.model.abstr;
 
 import com.eaio.uuid.UUID;
 import org.hibernate.annotations.AccessType;

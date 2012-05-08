@@ -27,7 +27,7 @@ public class UserDaoJPAImp extends AbstractDaoJPAImpl<User> implements UserDao {
     public List<User> findAll() {
         return getJpaTemplate().execute(new JpaCallback<List<User>>() {
             public List<User> doInJpa(EntityManager em) throws PersistenceException {
-                TypedQuery<User> query = em.createQuery("select e from User e", User.class);
+                TypedQuery<User> query = em.createNamedQuery(User.FINDALL, User.class);
                 return query.getResultList();
             }
         });
@@ -36,7 +36,6 @@ public class UserDaoJPAImp extends AbstractDaoJPAImpl<User> implements UserDao {
     @Transactional
     public int countAll() {
         return getJpaTemplate().execute(new JpaCallback<Integer>() {
-
             public Integer doInJpa(EntityManager em) throws PersistenceException {
                 TypedQuery<Long> query = em.createQuery("select count (e) from User e", Long.class);
                 return (query.getSingleResult()).intValue();

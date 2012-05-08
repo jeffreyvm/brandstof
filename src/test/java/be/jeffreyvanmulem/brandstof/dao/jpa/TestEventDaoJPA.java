@@ -88,7 +88,7 @@ public class TestEventDaoJPA {
     }
 
     /**
-     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.AbstractDaoJPAImpl#save(be.jeffreyvanmulem.brandstof.model.DomainObject)}.
+     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.AbstractDaoJPAImpl#save(be.jeffreyvanmulem.brandstof.model.abstr.DomainObject)}.
      */
     @Test
     @Transactional

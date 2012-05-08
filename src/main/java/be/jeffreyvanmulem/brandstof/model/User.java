@@ -1,5 +1,8 @@
 package be.jeffreyvanmulem.brandstof.model;
 
+import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
+import be.jeffreyvanmulem.brandstof.model.types.UserRole;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -25,78 +28,48 @@ public class User extends DomainObject {
     @Column(name = "Password")
     private String password;
 
-    @Column(name = "Description")
-    private String description;
+    @Column(name = "Email")
+    private String email;
 
     @Column(name = "DateOfBirth")
     private Date dateOfBirth;
 
+    @Column(name = "Name")
+    private String name;
+
+    @Column(name = "SurName")
+    private String surName;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private Set<Car> cars = new HashSet<Car>();
+
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "User_Id")
-    private Set<UserRole> roles = new HashSet<UserRole>();
+    private Set<UserRole> userRoles = new HashSet<UserRole>();
 
-    /**
-     * The default constructor
-     */
-    public User() {
-        super();
-        this.roles = new HashSet<UserRole>();
-    }
 
-    /**
-     * @return the username
-     */
     public String getUsername() {
         return username;
     }
 
-    /**
-     * @param username the username to set
-     */
     public void setUsername(String username) {
         this.username = username;
     }
 
-    /**
-     * @return the password
-     */
     public String getPassword() {
         return password;
     }
 
-    /**
-     * @param password the password to set
-     */
     public void setPassword(String password) {
         this.password = password;
     }
 
-    /**
-     * @return the description
-     */
-    public String getDescription() {
-        return description;
+    public String getEmail() {
+        return email;
     }
 
-    /**
-     * @param description the description to set
-     */
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * @return the roles
-     */
-    public Set<UserRole> getRoles() {
-        return roles;
-    }
-
-    /**
-     * @param roles the roles to set
-     */
-    public void setRoles(Set<UserRole> roles) {
-        this.roles = roles;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Date getDateOfBirth() {
@@ -105,5 +78,37 @@ public class User extends DomainObject {
 
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
+    public Set<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(Set<Car> cars) {
+        this.cars = cars;
+    }
+
+    public Set<UserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    public void setUserRoles(Set<UserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 }
