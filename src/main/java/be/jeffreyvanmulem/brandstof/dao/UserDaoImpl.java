@@ -1,5 +1,6 @@
 package be.jeffreyvanmulem.brandstof.dao;
 
+import be.jeffreyvanmulem.brandstof.dao.abstr.AbstractDaoImpl;
 import be.jeffreyvanmulem.brandstof.dao.interfaces.UserDao;
 import be.jeffreyvanmulem.brandstof.model.User;
 import org.springframework.orm.jpa.JpaCallback;
@@ -17,9 +18,9 @@ import java.util.List;
  * Time: 23:05
  * To change this template use File | Settings | File Templates.
  */
-public class UserDaoJPAImp extends AbstractDaoJPAImpl<User> implements UserDao {
+public class UserDaoImpl extends AbstractDaoImpl<User> implements UserDao {
 
-    public UserDaoJPAImp() {
+    public UserDaoImpl() {
         super(User.class);
     }
 

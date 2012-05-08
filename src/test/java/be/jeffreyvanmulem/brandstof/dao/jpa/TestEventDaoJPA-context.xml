@@ -21,7 +21,7 @@
     </bean>
 
 
-    <bean id="userDao" class="be.jeffreyvanmulem.brandstof.dao.UserDaoJPAImp">
+    <bean id="userDao" class="be.jeffreyvanmulem.brandstof.dao.UserDaoImpl">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
     </bean>
 

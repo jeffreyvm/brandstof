@@ -44,7 +44,7 @@ public class TestEventDaoJPA {
 
 
     /**
-     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.UserDaoJPAImp#findAll()}.
+     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.UserDaoImpl#findAll()}.
      */
     @Test
     @Transactional
@@ -56,7 +56,7 @@ public class TestEventDaoJPA {
     }
 
     /**
-     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.UserDaoJPAImp#countAll()}.
+     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.UserDaoImpl#countAll()}.
      */
     @Test
     @Transactional
@@ -66,7 +66,7 @@ public class TestEventDaoJPA {
     }
 
     /**
-     * Test method for AbstractDaoJPAImpl#delete(DomainObject)
+     * Test method for AbstractDaoImpl#delete(DomainObject)
      */
     @Test
     @Transactional
@@ -77,7 +77,7 @@ public class TestEventDaoJPA {
     }
 
     /**
-     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.AbstractDaoJPAImpl#load(java.io.Serializable)}.
+     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.abstr.AbstractDaoImpl#load(java.io.Serializable)}.
      */
     @Test
     @Transactional
@@ -88,7 +88,7 @@ public class TestEventDaoJPA {
     }
 
     /**
-     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.AbstractDaoJPAImpl#save(be.jeffreyvanmulem.brandstof.model.abstr.DomainObject)}.
+     * Test method for {@link be.jeffreyvanmulem.brandstof.dao.abstr.AbstractDaoImpl#save(be.jeffreyvanmulem.brandstof.model.abstr.DomainObject)}.
      */
     @Test
     @Transactional

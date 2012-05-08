@@ -1,4 +1,4 @@
-package be.jeffreyvanmulem.brandstof.dao;
+package be.jeffreyvanmulem.brandstof.dao.abstr;
 
 import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.Dao;
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
@@ -14,12 +14,12 @@ import java.io.Serializable;
  * Time: 23:05
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractDaoJPAImpl<T extends DomainObject> extends JpaDaoSupport implements Dao<T> {
+public abstract class AbstractDaoImpl<T extends DomainObject> extends JpaDaoSupport implements Dao<T> {
 
     private Class<T> domainClass;
 
 
-    public AbstractDaoJPAImpl(Class<T> domainClass) {
+    public AbstractDaoImpl(Class<T> domainClass) {
         this.domainClass = domainClass;
     }
 
