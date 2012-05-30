@@ -10,5 +10,5 @@ import be.jeffreyvanmulem.brandstof.model.types.Tag;
  * Time: 20:22
  * To change this template use File | Settings | File Templates.
  */
-public interface TagDAO extends ITypeDAO<Tag> {
+public interface TagDao extends ITypeDAO<Tag> {
 }

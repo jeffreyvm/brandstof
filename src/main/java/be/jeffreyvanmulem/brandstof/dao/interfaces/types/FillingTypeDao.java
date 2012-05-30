@@ -10,5 +10,5 @@ import be.jeffreyvanmulem.brandstof.model.types.FillingType;
  * Time: 20:22
  * To change this template use File | Settings | File Templates.
  */
-public interface FillingTypeDAO extends ITypeDAO<FillingType> {
+public interface FillingTypeDao extends ITypeDAO<FillingType> {
 }

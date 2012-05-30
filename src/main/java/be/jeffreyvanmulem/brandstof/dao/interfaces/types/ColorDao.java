@@ -10,5 +10,5 @@ import be.jeffreyvanmulem.brandstof.model.types.Color;
  * Time: 20:22
  * To change this template use File | Settings | File Templates.
  */
-public interface ColorDAO extends ITypeDAO<Color> {
+public interface ColorDao extends ITypeDAO<Color> {
 }
