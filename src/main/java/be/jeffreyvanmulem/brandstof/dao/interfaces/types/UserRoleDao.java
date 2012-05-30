@@ -10,5 +10,5 @@ import be.jeffreyvanmulem.brandstof.model.types.UserRole;
  * Time: 20:22
  * To change this template use File | Settings | File Templates.
  */
-public interface UserRoleDAO extends ITypeDAO<UserRole> {
+public interface UserRoleDao extends ITypeDAO<UserRole> {
 }
