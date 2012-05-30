@@ -11,7 +11,7 @@ package be.jeffreyvanmulem.brandstof;
 import be.jeffreyvanmulem.brandstof.dao.interfaces.CarDao;
 import be.jeffreyvanmulem.brandstof.dao.interfaces.FillupDao;
 import be.jeffreyvanmulem.brandstof.dao.interfaces.UserDao;
-import be.jeffreyvanmulem.brandstof.dao.interfaces.types.ColorDAO;
+import be.jeffreyvanmulem.brandstof.dao.interfaces.types.ColorDao;
 import be.jeffreyvanmulem.brandstof.dao.interfaces.types.MakeDao;
 import be.jeffreyvanmulem.brandstof.dao.interfaces.types.ModelDao;
 import be.jeffreyvanmulem.brandstof.model.Car;
@@ -41,7 +41,7 @@ public class DataInitialiser {
     @Autowired
     private UserDao userDao;
     @Autowired
-    private ColorDAO colorDao;
+    private ColorDao colorDao;
     @Autowired
     private ModelDao modelDao;
     @Autowired

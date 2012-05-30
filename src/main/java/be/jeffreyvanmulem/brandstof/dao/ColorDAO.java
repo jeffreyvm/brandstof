@@ -1,6 +1,7 @@
 package be.jeffreyvanmulem.brandstof.dao;
 
 import be.jeffreyvanmulem.brandstof.dao.abstr.AbstractTypeDAO;
+import be.jeffreyvanmulem.brandstof.dao.interfaces.types.ColorDao;
 import be.jeffreyvanmulem.brandstof.model.types.Color;
 import org.springframework.stereotype.Repository;
 
@@ -16,7 +17,7 @@ import javax.persistence.PersistenceContext;
  */
 
 @Repository(value = "colorDao")
-public class ColorDAO extends AbstractTypeDAO<Color> implements be.jeffreyvanmulem.brandstof.dao.interfaces.types.ColorDAO {
+public class ColorDAO extends AbstractTypeDAO<Color> implements ColorDao {
 
     @PersistenceContext
     private EntityManager entityManager;
