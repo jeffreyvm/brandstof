@@ -1,6 +1,6 @@
 package be.jeffreyvanmulem.brandstof.dao.interfaces.types;
 
-import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.TypeDao;
+import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.ITypeDAO;
 import be.jeffreyvanmulem.brandstof.model.types.UserRole;
 
 /**
@@ -10,5 +10,5 @@ import be.jeffreyvanmulem.brandstof.model.types.UserRole;
  * Time: 20:22
  * To change this template use File | Settings | File Templates.
  */
-public interface UserRoleDao extends TypeDao<UserRole>{
+public interface UserRoleDAO extends ITypeDAO<UserRole> {
 }
