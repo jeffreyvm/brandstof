@@ -1,8 +1,8 @@
 package be.jeffreyvanmulem.brandstof.dao;
 
 import be.jeffreyvanmulem.brandstof.dao.abstr.AbstractDAO;
-import be.jeffreyvanmulem.brandstof.dao.interfaces.UserDao;
-import be.jeffreyvanmulem.brandstof.model.User;
+import be.jeffreyvanmulem.brandstof.dao.interfaces.CarDao;
+import be.jeffreyvanmulem.brandstof.model.Car;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -11,12 +11,12 @@ import javax.persistence.PersistenceContext;
 /**
  * Created by IntelliJ IDEA.
  * User: Jeffrey
- * Date: 6/05/12
- * Time: 23:05
+ * Date: 11/05/12
+ * Time: 22:37
  * To change this template use File | Settings | File Templates.
  */
-@Repository(value="userDao")
-public class UserDaoImpl extends AbstractDAO<User> implements UserDao {
+@Repository(value = "carDao")
+public class CarDaoImpl extends AbstractDAO<Car> implements CarDao {
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -24,8 +24,7 @@ public class UserDaoImpl extends AbstractDAO<User> implements UserDao {
         return entityManager;
     }
 
-    public Class<User> getClazz() {
-        return User.class;
+    public Class<Car> getClazz() {
+        return Car.class;
     }
 }
-

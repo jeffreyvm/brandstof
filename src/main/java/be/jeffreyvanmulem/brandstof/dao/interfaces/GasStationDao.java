@@ -1,6 +1,6 @@
 package be.jeffreyvanmulem.brandstof.dao.interfaces;
 
-import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.Dao;
+import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.IDAO;
 import be.jeffreyvanmulem.brandstof.model.GasStation;
 
 /**
@@ -10,5 +10,5 @@ import be.jeffreyvanmulem.brandstof.model.GasStation;
  * Time: 20:28
  * To change this template use File | Settings | File Templates.
  */
-public interface GasStationDao extends Dao<GasStation> {
+public interface GasStationDao extends IDAO<GasStation> {
 }

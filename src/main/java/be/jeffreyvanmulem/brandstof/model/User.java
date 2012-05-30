@@ -2,6 +2,7 @@ package be.jeffreyvanmulem.brandstof.model;
 
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
 import be.jeffreyvanmulem.brandstof.model.types.UserRole;
+import org.joda.time.LocalDate;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,15 +14,7 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "User")
-@NamedQueries(
-        {
-                @NamedQuery(name = User.FINDALL, query = "select p from User p")
-        }
-)
 public class User extends DomainObject {
-
-    public static final String FINDALL = "User.FindAll";
-
     @Column(name = "Username")
     private String username;
 
@@ -32,7 +25,7 @@ public class User extends DomainObject {
     private String email;
 
     @Column(name = "DateOfBirth")
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
 
     @Column(name = "Name")
     private String name;
@@ -72,11 +65,11 @@ public class User extends DomainObject {
         this.email = email;
     }
 
-    public Date getDateOfBirth() {
+    public LocalDate getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

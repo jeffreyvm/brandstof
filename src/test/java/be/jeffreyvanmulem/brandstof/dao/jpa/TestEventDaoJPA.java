@@ -10,18 +10,10 @@ package be.jeffreyvanmulem.brandstof.dao.jpa;
 
 import be.jeffreyvanmulem.brandstof.dao.interfaces.UserDao;
 import be.jeffreyvanmulem.brandstof.model.User;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Jeffrey Van Mulem
@@ -34,7 +26,7 @@ public class TestEventDaoJPA {
     private UserDao userDao;
 
     protected User user;
-
+/*
     @Before
     public void startTransaction() {
         user = new User();
@@ -43,9 +35,9 @@ public class TestEventDaoJPA {
     }
 
 
-    /**
+    *//**
      * Test method for {@link be.jeffreyvanmulem.brandstof.dao.UserDaoImpl#findAll()}.
-     */
+     *//*
     @Test
     @Transactional
     @Rollback
@@ -55,9 +47,9 @@ public class TestEventDaoJPA {
         Assert.assertEquals(users, userDao.findAll());
     }
 
-    /**
+    *//**
      * Test method for {@link be.jeffreyvanmulem.brandstof.dao.UserDaoImpl#countAll()}.
-     */
+     *//*
     @Test
     @Transactional
     @Rollback
@@ -65,9 +57,9 @@ public class TestEventDaoJPA {
         Assert.assertEquals(1, userDao.countAll());
     }
 
-    /**
+    *//**
      * Test method for AbstractDaoImpl#delete(DomainObject)
-     */
+     *//*
     @Test
     @Transactional
     @Rollback
@@ -76,9 +68,9 @@ public class TestEventDaoJPA {
         Assert.assertEquals(0, userDao.countAll());
     }
 
-    /**
+    *//**
      * Test method for {@link be.jeffreyvanmulem.brandstof.dao.abstr.AbstractDaoImpl#load(java.io.Serializable)}.
-     */
+     *//*
     @Test
     @Transactional
     @Rollback
@@ -87,14 +79,14 @@ public class TestEventDaoJPA {
         Assert.assertEquals(user, user2);
     }
 
-    /**
+    *//**
      * Test method for {@link be.jeffreyvanmulem.brandstof.dao.abstr.AbstractDaoImpl#save(be.jeffreyvanmulem.brandstof.model.abstr.DomainObject)}.
-     */
+     *//*
     @Test
     @Transactional
     @Rollback
     public void testSave() {
         //if we have got this far then save works
-    }
+    }*/
 
 }

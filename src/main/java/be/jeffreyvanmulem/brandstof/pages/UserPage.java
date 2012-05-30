@@ -1,7 +1,7 @@
 package be.jeffreyvanmulem.brandstof.pages;
 
-import be.jeffreyvanmulem.brandstof.dao.interfaces.UserDao;
 import be.jeffreyvanmulem.brandstof.model.User;
+import be.jeffreyvanmulem.brandstof.service.UserService;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.form.AjaxSubmitLink;
 import org.apache.wicket.markup.html.WebMarkupContainer;
@@ -28,15 +28,15 @@ import java.util.List;
 public class UserPage extends WebPage {
 
     @SpringBean
-    private UserDao userDao;
-    public UserPage(final PageParameters pp)
-    {
+    private UserService userService;
+
+    public UserPage(final PageParameters pp) {
         Form<User> eventForm = new Form<User>("eventForm", new CompoundPropertyModel<User>(new User()));
         eventForm.add(new TextField<String>("username").setRequired(true));
 
         final WebMarkupContainer wmc = new WebMarkupContainer("listContainer");
 
-        wmc.add(new ListView<User>("list", new PropertyModel<List<User>>(this, "userDao.findAll")){
+        wmc.add(new ListView<User>("list", new PropertyModel<List<User>>(this, "userService.findAll")) {
 
             private static final long serialVersionUID = 1L;
 
@@ -58,7 +58,7 @@ public class UserPage extends WebPage {
                 User user = (User) form.getModelObject();
                 User newUser = new User();
                 newUser.setUsername(user.getUsername());
-                userDao.save(newUser);
+                userService.save(newUser);
                 target.add(wmc);
             }
 

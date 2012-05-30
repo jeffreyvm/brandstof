@@ -13,7 +13,7 @@ import javax.persistence.*;
  * To change this template use File | Settings | File Templates.
  */
 @MappedSuperclass
-public abstract class DomainObject extends AbstractAuditable {
+public abstract class DomainObject extends AbstractAuditable implements IEntity {
 
     @Version
     @Column(name = "Version")
@@ -36,8 +36,12 @@ public abstract class DomainObject extends AbstractAuditable {
         super();
     }
 
-    public boolean isNieuw() {
+    public boolean isNew() {
         return getId() == null;
+    }
+
+    public boolean isPersisted(){
+        return !isNew();
     }
 
     public String getUniqueIdentifier() {

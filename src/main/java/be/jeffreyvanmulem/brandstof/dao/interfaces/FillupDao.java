@@ -1,6 +1,6 @@
 package be.jeffreyvanmulem.brandstof.dao.interfaces;
 
-import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.Dao;
+import be.jeffreyvanmulem.brandstof.dao.interfaces.abstr.IDAO;
 import be.jeffreyvanmulem.brandstof.model.Fillup;
 
 /**
@@ -10,5 +10,5 @@ import be.jeffreyvanmulem.brandstof.model.Fillup;
  * Time: 20:28
  * To change this template use File | Settings | File Templates.
  */
-public interface FillupDao extends Dao<Fillup> {
+public interface FillupDao extends IDAO<Fillup> {
 }
