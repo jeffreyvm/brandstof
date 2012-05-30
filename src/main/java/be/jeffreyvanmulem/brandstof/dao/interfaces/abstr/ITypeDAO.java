@@ -9,6 +9,6 @@ import be.jeffreyvanmulem.brandstof.model.abstr.DomainObjectType;
  * Time: 20:20
  * To change this template use File | Settings | File Templates.
  */
-public interface TypeDAO<T extends DomainObjectType> extends IDAO<T> {
+public interface ITypeDAO<T extends DomainObjectType> extends IDAO<T> {
 
 }
