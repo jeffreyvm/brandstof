@@ -8,17 +8,6 @@ package be.jeffreyvanmulem.brandstof;
  * To change this template use File | Settings | File Templates.
  */
 
-import be.jeffreyvanmulem.brandstof.dao.interfaces.CarDao;
-import be.jeffreyvanmulem.brandstof.dao.interfaces.FillupDao;
-import be.jeffreyvanmulem.brandstof.dao.interfaces.UserDao;
-import be.jeffreyvanmulem.brandstof.dao.interfaces.types.ColorDao;
-import be.jeffreyvanmulem.brandstof.dao.interfaces.types.MakeDao;
-import be.jeffreyvanmulem.brandstof.dao.interfaces.types.ModelDao;
-import be.jeffreyvanmulem.brandstof.model.Car;
-import be.jeffreyvanmulem.brandstof.model.Make;
-import be.jeffreyvanmulem.brandstof.model.Model;
-import be.jeffreyvanmulem.brandstof.model.User;
-import be.jeffreyvanmulem.brandstof.model.types.Color;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.joda.time.LocalDate;
@@ -31,7 +20,7 @@ import java.io.InputStream;
 
 public class DataInitialiser {
 
-    private static String[] dummySurNames = {"Heather", "Candice", "Angelina", "Megan"};
+    /*private static String[] dummySurNames = {"Heather", "Candice", "Angelina", "Megan"};
     private static String[] dummyNames = {"Huntington", "Swaenepoel", "Jolie", "Fox"};
 
     public void setUserDao(UserDao userDao) {
@@ -118,5 +107,5 @@ public class DataInitialiser {
 
         }
     }
-
+*/
 }

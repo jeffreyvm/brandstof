@@ -1,6 +1,5 @@
 package be.jeffreyvanmulem.brandstof.model.types;
 
-import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObjectType;
 
 import javax.persistence.Column;

@@ -5,7 +5,6 @@ import be.jeffreyvanmulem.brandstof.model.types.UserRole;
 import org.joda.time.LocalDate;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 

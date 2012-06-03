@@ -1,7 +1,6 @@
 package be.jeffreyvanmulem.brandstof.model;
 
 import be.jeffreyvanmulem.brandstof.model.abstr.DomainObject;
-import be.jeffreyvanmulem.brandstof.model.abstr.DomainObjectType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
