@@ -12,7 +12,7 @@
     <artifactId>brandstof.web-ui</artifactId>
 
     <packaging>war</packaging>
-    <name>Brandstof Webapp</name>
+    <name>Webapp</name>
 
     <dependencies>
 

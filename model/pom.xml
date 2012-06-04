@@ -11,6 +11,8 @@
     <artifactId>brandstof.model</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Model</name>
+
     <dependencies>
         <!-- JPA with Hibernate -->
         <dependency>
