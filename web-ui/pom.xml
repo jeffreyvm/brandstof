@@ -9,32 +9,81 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>web-ui</artifactId>
+    <artifactId>brandstof.web-ui</artifactId>
 
+    <packaging>war</packaging>
     <name>Brandstof Webapp</name>
 
     <dependencies>
+
+        <dependency>
+            <groupId>be.jeffreyvanmulem</groupId>
+            <artifactId>brandstof.model</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>be.jeffreyvanmulem</groupId>
+            <artifactId>brandstof.services</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+
         <!--  WICKET DEPENDENCIES -->
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>
             <version>${wicket.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-spring</artifactId>
             <version>${wicket.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
+        <!-- SPRING -->
         <dependency>
-            <groupId>be.jeffreyvanmulem.brandstof</groupId>
-            <artifactId>model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${org.springframework.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <!--  JETTY DEPENDENCIES FOR TESTING  -->
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty</artifactId>
+            <version>${jetty.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>be.jeffreyvanmulem.brandstof</groupId>
-            <artifactId>services</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-util</artifactId>
+            <version>${jetty.version}</version>
+            <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.mortbay.jetty</groupId>
+            <artifactId>jetty-management</artifactId>
+            <version>${jetty.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 </project>

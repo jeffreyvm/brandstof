@@ -3,24 +3,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>be.jeffreyvanmulem.brandstof</groupId>
-    <artifactId>parent</artifactId>
+    <groupId>be.jeffreyvanmulem</groupId>
+    <artifactId>brandstof</artifactId>
     <packaging>pom</packaging>
-    <name>brandstof</name>
     <version>1.0-SNAPSHOT</version>
+
+    <name>brandstof</name>
     <description>Beheer al je tankdata en trek daar statistieken uit.</description>
 
     <organization>
         <name>jeffreyvanmulem.be</name>
         <url>http://www.jeffreyvanmulem.be</url>
     </organization>
-
-    <modules>
-        <module>model</module>
-        <module>services</module>
-        <module>web-ui</module>
-    </modules>
-
     <developers>
         <developer>
             <id>jvmulem</id>
@@ -33,6 +27,11 @@
         </developer>
     </developers>
 
+    <modules>
+        <module>model</module>
+        <module>services</module>
+        <module>web-ui</module>
+    </modules>
 
     <properties>
         <slf4j.version>1.6.4</slf4j.version>
@@ -44,6 +43,7 @@
         <hibernate.version>3.5.6-Final</hibernate.version>
         <log4j.version>1.2.16</log4j.version>
         <commons-dbcp.version>1.4</commons-dbcp.version>
+        <jpa.version>2.0-cr-1</jpa.version>
     </properties>
 
     <repositories>
@@ -71,20 +71,15 @@
             <version>${slf4j.version}</version>
             <scope>runtime</scope>
         </dependency>
-        <!--
-            since we want the jcl over slf4j, we need to bump up the version of
-            slf4j-api that wicket brings in
-        -->
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.0.4</version>
+        </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${slf4j.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -97,35 +92,18 @@
         <!-- Spring Deps -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>${org.springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>${org.springframework.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>commons-logging</groupId>
-                    <artifactId>commons-logging</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>${org.springframework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${org.springframework.version}</version>
-            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${org.springframework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -137,6 +115,19 @@
             <artifactId>spring-context-support</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
+
+
 
         <dependency>
             <groupId>commons-dbcp</groupId>
@@ -147,12 +138,6 @@
 
         <!-- JPA -->
         <!-- Hibernate impl -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.mortbay.jetty</groupId>
             <artifactId>jetty</artifactId>
@@ -197,9 +182,31 @@
     </dependencies>
 
     <build>
+        <plugins>
+            <plugin>
+                <inherited>true</inherited>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.4.3</version>
+            </plugin>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>maven-jetty-plugin</artifactId>
+                <version>${jetty.version}</version>
+            </plugin>
+        </plugins>
         <resources>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>services/src/main/resources</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -219,7 +226,7 @@
         </resources>
         <testResources>
             <testResource>
-                <directory>src/test/java</directory>
+                <directory>services/src/test/java</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -228,7 +235,7 @@
                 </excludes>
             </testResource>
             <testResource>
-                <directory>src/test/resources</directory>
+                <directory>services/src/test/resources</directory>
                 <includes>
                     <include>**</include>
                 </includes>
@@ -237,21 +244,5 @@
                 </excludes>
             </testResource>
         </testResources>
-        <plugins>
-            <plugin>
-                <inherited>true</inherited>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.5</source>
-                    <target>1.5</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>${jetty.version}</version>
-            </plugin>
-        </plugins>
     </build>
 </project>
