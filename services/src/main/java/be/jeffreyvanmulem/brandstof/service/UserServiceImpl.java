@@ -19,6 +19,9 @@ import java.util.List;
 @Transactional(rollbackFor = Exception.class)
 public class UserServiceImpl implements UserService {
 
+    @Autowired
+    private UserDao userDao;
+
     public long size() {
         return userDao.size();
     }
