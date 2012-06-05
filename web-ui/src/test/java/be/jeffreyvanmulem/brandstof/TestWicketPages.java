@@ -1,4 +1,4 @@
-package be.jeffreyvanmulem.brandstof.wicket;
+package be.jeffreyvanmulem.brandstof;
 
 import be.jeffreyvanmulem.brandstof.HomePage;
 import be.jeffreyvanmulem.brandstof.WicketApplication;
