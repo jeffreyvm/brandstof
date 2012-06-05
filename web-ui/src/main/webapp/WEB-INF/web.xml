@@ -3,8 +3,28 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
          version="2.4">
-
     <display-name>Brandstof</display-name>
+
+    <filter>
+        <filter-name>wicket.filter</filter-name>
+        <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+        <init-param>
+            <param-name>applicationClassName</param-name>
+            <param-value>be.jeffreyvanmulem.brandstof.WicketApplication</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>wicket.filter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
 
     <filter>
         <filter-name>openEntityManagerInViewFilter</filter-name>
@@ -23,25 +43,4 @@
         <param-value>/WEB-INF/applicationContext.xml</param-value>
     </context-param>
 
-    <listener>
-        <listener-class>
-            org.springframework.web.context.ContextLoaderListener
-        </listener-class>
-    </listener>
-
-    <filter>
-        <filter-name>wicket.filter</filter-name>
-        <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
-        <init-param>
-            <param-name>applicationFactoryClassName</param-name>
-            <param-value>
-                org.apache.wicket.spring.SpringWebApplicationFactory
-            </param-value>
-        </init-param>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>wicket.filter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 </web-app>

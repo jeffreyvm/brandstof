@@ -16,12 +16,6 @@ import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
  *      To change this template use File | Settings | File Templates.
  */
 public class WicketApplication extends WebApplication {
-    /**
-     * Constructor
-     */
-    public WicketApplication() {
-    }
-
     protected SpringComponentInjector getSpringInjector() {
         return new SpringComponentInjector(this);
     }
