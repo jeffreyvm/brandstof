@@ -15,7 +15,6 @@ import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.request.mapper.parameter.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -28,7 +27,7 @@ import java.util.List;
  */
 public class UserPage extends WebPage {
 
-    @Autowired
+    @SpringBean(name = "userService")
     private UserService userService;
 
     public UserPage(final PageParameters pp) {
